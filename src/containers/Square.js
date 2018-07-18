@@ -12,6 +12,7 @@ const Square = props => {
         margin: "-1px"
       }}
       onClick={() => {
+        if (value) return;
         playSquare(x, y);
       }}
     >

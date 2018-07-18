@@ -15,8 +15,8 @@ class Game extends Component {
   }
 
   changePlayer() {
-    let player = this.state.player === 1 ? 2 : 1;
-    this.setState({ player });
+    let currPlayer = this.state.currPlayer === "X" ? "O" : "X";
+    this.setState({ currPlayer });
   }
 
   playSquare(x, y) {
