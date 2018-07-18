@@ -3,11 +3,19 @@ import Square from "./Square";
 import "../styling/Board.css";
 
 const Board = props => {
-  const { layout } = props;
+  const { layout, playSquare } = props;
   const squares = [];
   for (let x in layout) {
     for (let y in layout[x]) {
-      squares.push(<Square key={[x, y]} value={layout[x][y]} x={x} y={y} />);
+      squares.push(
+        <Square
+          key={[x, y]}
+          value={layout[x][y]}
+          x={x}
+          y={y}
+          playSquare={playSquare}
+        />
+      );
     }
   }
   return <div className="container">{squares}</div>;

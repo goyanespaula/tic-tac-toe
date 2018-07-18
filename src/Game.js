@@ -5,17 +5,27 @@ class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currPlayer: 1,
+      currPlayer: "X",
       showWinScreen: false,
       layout: Array(3)
         .fill(null)
-        .map(square => Array(3).fill("placeholder"))
+        .map(square => Array(3).fill(null))
     };
+    this.playSquare = this.playSquare.bind(this);
   }
 
   changePlayer() {
     let player = this.state.player === 1 ? 2 : 1;
     this.setState({ player });
+  }
+
+  playSquare(x, y) {
+    // if (checkWin())
+    // else
+    let newLayout = this.state.layout.slice();
+    newLayout[x][y] = this.state.currPlayer === "X" ? "X" : "O";
+    this.changePlayer();
+    this.setState(newLayout);
   }
 
   reset() {
@@ -35,7 +45,7 @@ class Game extends Component {
         <header>
           <h1>Welcome to TicTacToe</h1>
         </header>
-        <Board layout={this.state.layout} />
+        <Board layout={this.state.layout} playSquare={this.playSquare} />
       </div>
     );
   }
