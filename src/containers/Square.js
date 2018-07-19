@@ -1,4 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+const propTypes = {
+  value: PropTypes.string,
+  y: PropTypes.number,
+  x: PropTypes.number,
+  playSquare: PropTypes.func.isRequired
+};
 
 const Square = props => {
   const { value, y, x, playSquare } = props;
@@ -20,5 +28,7 @@ const Square = props => {
     </div>
   );
 };
+
+Square.propTypes = propTypes;
 
 export default Square;

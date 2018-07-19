@@ -1,4 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+const propTypes = {
+  winner: PropTypes.string.isRequired,
+  reset: PropTypes.func.isRequired
+};
 
 const WinScreen = props => {
   const { winner, reset } = props;
@@ -11,5 +17,7 @@ const WinScreen = props => {
     </div>
   );
 };
+
+WinScreen.propTypes = propTypes;
 
 export default WinScreen;
