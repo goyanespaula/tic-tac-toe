@@ -25,8 +25,8 @@ class Game extends Component {
   }
 
   playSquare(y, x) {
-    let layout = this.state.layout.slice();
-    layout[x][y] = this.state.currPlayer;
+    let layout = this.state.layout.map(arr => arr.slice());
+    layout[y][x] = this.state.currPlayer;
     let moveCount = this.state.moveCount + 1;
 
     const winner = checkWin(layout, y, x, this.state.currPlayer, moveCount);
@@ -42,7 +42,7 @@ class Game extends Component {
 
   reset() {
     this.setState({
-      currPlayer: "x",
+      currPlayer: "X",
       layout: Array(3)
         .fill(null)
         .map(square => Array(3).fill(null)),

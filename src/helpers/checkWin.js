@@ -22,19 +22,22 @@ function checkWin(layout, y, x, player, moveCount) {
   winner = player;
 
   let v = 0;
-  let h = layout.length - 1;
+  let h = 0;
 
   while (v < layout.length) {
-    if (layout[v][v] !== player) {
+    if (layout[v][h] !== player) {
       winner = false;
       break;
     }
     v++;
+    h++;
   }
 
   if (winner) return winner;
   winner = player;
 
+  v = 0;
+  h = layout.length - 1;
   while (v < layout.length) {
     if (layout[v][h] !== player) {
       winner = false;

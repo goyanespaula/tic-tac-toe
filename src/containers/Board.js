@@ -10,7 +10,7 @@ const Board = props => {
       squares.push(
         <Square
           key={[y, x]}
-          value={layout[x][y]}
+          value={layout[y][x]}
           y={y}
           x={x}
           playSquare={playSquare}
