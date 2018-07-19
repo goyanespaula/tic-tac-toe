@@ -1,7 +1,7 @@
-function checkWin(layout, x, y, player, moveCount) {
+function checkWin(layout, y, x, player, moveCount) {
   let winner = player;
 
-  for (let val of layout[x]) {
+  for (let val of layout[y]) {
     if (val !== player) {
       winner = false;
       break;
@@ -12,7 +12,7 @@ function checkWin(layout, x, y, player, moveCount) {
   winner = player;
 
   for (let row of layout) {
-    if (row[y] !== player) {
+    if (row[x] !== player) {
       winner = false;
       break;
     }
@@ -21,33 +21,33 @@ function checkWin(layout, x, y, player, moveCount) {
   if (winner) return winner;
   winner = player;
 
-  let i = 0;
-  let j = layout.length - 1;
+  let v = 0;
+  let h = layout.length - 1;
 
-  while (i < layout.length) {
-    if (layout[i][i] !== player) {
+  while (v < layout.length) {
+    if (layout[v][v] !== player) {
       winner = false;
       break;
     }
-    i++;
+    v++;
   }
 
   if (winner) return winner;
   winner = player;
 
-  while (i < layout.length) {
-    if (layout[i][j] !== player) {
+  while (v < layout.length) {
+    if (layout[v][h] !== player) {
       winner = false;
       break;
     }
-    i++;
-    j--;
+    v++;
+    h--;
   }
 
   if (winner) return winner;
   winner = player;
 
-  if (moveCount === layout.length * layout.length) {
+  if (moveCount === Math.pow(layout.length, 2)) {
     return "draw";
   }
 

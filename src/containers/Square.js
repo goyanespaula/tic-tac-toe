@@ -1,7 +1,7 @@
 import React from "react";
 
 const Square = props => {
-  const { value, x, y, playSquare } = props;
+  const { value, y, x, playSquare } = props;
   return (
     <div
       style={{
@@ -13,7 +13,7 @@ const Square = props => {
       }}
       onClick={() => {
         if (value) return;
-        playSquare(x, y);
+        playSquare(y, x);
       }}
     >
       {value}

@@ -5,14 +5,14 @@ import "../styling/Board.css";
 const Board = props => {
   const { layout, playSquare } = props;
   const squares = [];
-  for (let x in layout) {
-    for (let y in layout[x]) {
+  for (let y in layout) {
+    for (let x in layout[y]) {
       squares.push(
         <Square
-          key={[x, y]}
+          key={[y, x]}
           value={layout[x][y]}
-          x={x}
           y={y}
+          x={x}
           playSquare={playSquare}
         />
       );

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Board from "./containers/Board";
+import WinScreen from "./containers/WinScreen";
 import checkWin from "./helpers/checkWin";
 
 class Game extends Component {
@@ -15,6 +16,7 @@ class Game extends Component {
       showWinScreen: false
     };
     this.playSquare = this.playSquare.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
   changePlayer() {
@@ -22,14 +24,14 @@ class Game extends Component {
     this.setState({ currPlayer });
   }
 
-  playSquare(x, y) {
+  playSquare(y, x) {
     let layout = this.state.layout.slice();
     layout[x][y] = this.state.currPlayer;
     let moveCount = this.state.moveCount + 1;
 
-    this.setState({ layout, moveCount });
+    const winner = checkWin(layout, y, x, this.state.currPlayer, moveCount);
 
-    const winner = checkWin(layout, x, y, this.state.currPlayer, moveCount);
+    this.setState({ layout, moveCount });
 
     if (winner) {
       this.setState({ winner, showWinScreen: true });
@@ -39,7 +41,15 @@ class Game extends Component {
   }
 
   reset() {
-    this.setState({ showWinScreen: false, currPlayer: 1 });
+    this.setState({
+      currPlayer: "x",
+      layout: Array(3)
+        .fill(null)
+        .map(square => Array(3).fill(null)),
+      moveCount: 0,
+      winner: false,
+      showWinScreen: false
+    });
   }
 
   render() {
@@ -56,6 +66,9 @@ class Game extends Component {
           <h1>Welcome to TicTacToe</h1>
         </header>
         <Board layout={this.state.layout} playSquare={this.playSquare} />
+        {this.state.showWinScreen ? (
+          <WinScreen reset={this.reset} winner={this.state.winner} />
+        ) : null}
       </div>
     );
   }
