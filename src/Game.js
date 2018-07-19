@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 import Board from "./containers/Board";
+import checkWin from "./helpers/checkWin";
 
 class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currPlayer: "X",
-      showWinScreen: false,
       layout: Array(3)
         .fill(null)
-        .map(square => Array(3).fill(null))
+        .map(square => Array(3).fill(null)),
+      moveCount: 0,
+      winner: false,
+      showWinScreen: false
     };
     this.playSquare = this.playSquare.bind(this);
   }
@@ -20,12 +23,19 @@ class Game extends Component {
   }
 
   playSquare(x, y) {
-    // if (checkWin())
-    // else
-    let newLayout = this.state.layout.slice();
-    newLayout[x][y] = this.state.currPlayer === "X" ? "X" : "O";
-    this.changePlayer();
-    this.setState(newLayout);
+    let layout = this.state.layout.slice();
+    layout[x][y] = this.state.currPlayer;
+    let moveCount = this.state.moveCount + 1;
+
+    this.setState({ layout, moveCount });
+
+    const winner = checkWin(layout, x, y, this.state.currPlayer, moveCount);
+
+    if (winner) {
+      this.setState({ winner, showWinScreen: true });
+    } else {
+      this.changePlayer();
+    }
   }
 
   reset() {
