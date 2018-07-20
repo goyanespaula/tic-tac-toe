@@ -11,10 +11,12 @@ const WinScreen = props => {
   let winMessage =
     winner === "draw" ? "It's a draw" : `Congrats ${winner} you've won!`;
   return (
-    <div>
+    <section>
       {winMessage}
-      <button onClick={reset}>Reset?</button>
-    </div>
+      <button id="reset" onClick={reset}>
+        Reset?
+      </button>
+    </section>
   );
 };
 

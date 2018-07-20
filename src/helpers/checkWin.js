@@ -1,6 +1,8 @@
 function checkWin(layout, y, x, player, moveCount) {
   let winner = player;
 
+  if (moveCount < 3) return false;
+
   for (let val of layout[y]) {
     if (val !== player) {
       winner = false;

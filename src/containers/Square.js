@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../styling/Square.css";
 
 const propTypes = {
   value: PropTypes.string,
@@ -12,13 +13,7 @@ const Square = props => {
   const { value, y, x, playSquare } = props;
   return (
     <div
-      style={{
-        backgroundColor: "cornsilk",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        margin: "-1px"
-      }}
+      className="square"
       onClick={() => {
         if (value) return;
         playSquare(y, x);

@@ -63,7 +63,7 @@ class Game extends Component {
         }}
       >
         <header>
-          <h1>Welcome to TicTacToe</h1>
+          <h1>Welcome to Tic-Tac-Toe</h1>
         </header>
         <Board layout={this.state.layout} playSquare={this.playSquare} />
         {this.state.showWinScreen ? (

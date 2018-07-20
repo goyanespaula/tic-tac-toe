@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Game /> initial state matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+    }
+  }
+>
+  <header>
+    <h1>
+      Welcome to TicTacToe
+    </h1>
+  </header>
+  <Board
+    layout={
+      Array [
+        Array [
+          null,
+          null,
+          null,
+        ],
+        Array [
+          null,
+          null,
+          null,
+        ],
+        Array [
+          null,
+          null,
+          null,
+        ],
+      ]
+    }
+    playSquare={[Function]}
+  />
+</div>
+`;
