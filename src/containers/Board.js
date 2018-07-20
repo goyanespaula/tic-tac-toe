@@ -24,11 +24,7 @@ const Board = props => {
       );
     }
   }
-  return (
-    <div className="border">
-      <section id="board">{squares}</section>
-    </div>
-  );
+  return <section id="board">{squares}</section>;
 };
 
 Board.propTypes = propTypes;

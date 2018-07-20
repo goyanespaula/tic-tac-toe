@@ -1,17 +1,16 @@
 #board {
-  /* background-color: pink; */
-  width: 30rem;
-  height: 30rem;
+  width: 500px;
+  height: 500px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-gap: 1.5rem;
-  /* & > div {
-    background-color: white;
-    padding: 10px;
-  } */
+  grid-gap: 20px;
 }
 
-.border {
-  background-color: black;
+@media (max-width: 550px) {
+  #board {
+    width: 375px;
+    height: 375px;
+    grid-gap: 15px;
+  }
 }

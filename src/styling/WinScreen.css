@@ -1,0 +1,33 @@
+#win-screen {
+  font-size: 2rem;
+  color: white;
+  background-color: rgba(35, 107, 138, 0.95);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#win-message > * {
+  margin: 2rem;
+  text-align: center;
+}
+
+#reset-btn {
+  font-size: 1.25rem;
+  padding: 0.8rem 3rem;
+  color: white;
+  background-color: rgba(11, 81, 106, 0.5);
+  margin: 0.5rem;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+}
+
+#reset-btn:hover {
+  color: rgba(11, 81, 106);
+  background-color: rgba(255, 255, 255, 0.9);
+}

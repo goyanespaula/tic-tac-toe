@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Board from "./containers/Board";
 import WinScreen from "./containers/WinScreen";
 import checkWin from "./helpers/checkWin";
+import "./styling/Game.css";
 
 class Game extends Component {
   constructor(props) {
@@ -54,18 +55,12 @@ class Game extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center"
-        }}
-      >
+      <div id="game">
         <header>
-          <h1>Welcome to Tic-Tac-Toe</h1>
+          <h1>Tic-Tac-Toe</h1>
         </header>
         <Board layout={this.state.layout} playSquare={this.playSquare} />
+        <h2>Current Player: {this.state.currPlayer}</h2>
         {this.state.showWinScreen ? (
           <WinScreen reset={this.reset} winner={this.state.winner} />
         ) : null}

@@ -2,18 +2,11 @@
 
 exports[`<Game /> initial state matches snapshot 1`] = `
 <div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "flexDirection": "column",
-      "justifyContent": "center",
-    }
-  }
+  id="game"
 >
   <header>
     <h1>
-      Welcome to TicTacToe
+      Tic-Tac-Toe
     </h1>
   </header>
   <Board
@@ -38,5 +31,9 @@ exports[`<Game /> initial state matches snapshot 1`] = `
     }
     playSquare={[Function]}
   />
+  <h2>
+    Current Player: 
+    X
+  </h2>
 </div>
 `;

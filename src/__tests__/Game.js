@@ -98,7 +98,7 @@ describe("<Game /> while played", () => {
   });
 
   it("should reset state when reset button is clicked", () => {
-    wrapper.find("#reset").simulate("click");
+    wrapper.find("#reset-btn").simulate("click");
     expect(wrapper.state()).toEqual({
       currPlayer: "X",
       layout: [[null, null, null], [null, null, null], [null, null, null]],
@@ -151,7 +151,7 @@ describe("<Game /> while played", () => {
   });
 
   it("should update state when game is a draw", () => {
-    wrapper.find("#reset").simulate("click");
+    wrapper.find("#reset-btn").simulate("click");
     wrapper
       .find("[y=1]")
       .find("[x=2]")
