@@ -18,6 +18,7 @@ const Square = props => {
         if (value) return;
         playSquare(y, x);
       }}
+      style={value ? { cursor: "not-allowed" } : {}}
     >
       {value}
     </div>

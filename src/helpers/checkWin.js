@@ -1,10 +1,10 @@
 /**
- * Returns the greatest common divisor of 2 numbers
+ * Checks if the game has been won
  * @param {array} layout
  * @param {number} y
  * @param {number} x
  * @param {string} player
- * @param {number} moveCounter
+ * @param {number} moveCount
  * @returns {string|bool} false if no winner, "draw" if draw, & "X" or "O" if winner
  */
 function checkWin(layout, y, x, player, moveCount) {
@@ -67,7 +67,6 @@ function checkWin(layout, y, x, player, moveCount) {
   }
 
   if (winner) return winner;
-  winner = player;
 
   // if no winner but max move count has been met, return "draw"
   if (moveCount === Math.pow(layout.length, 2)) {

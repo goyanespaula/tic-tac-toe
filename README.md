@@ -21,4 +21,4 @@ You will also see any lint errors in the console.
 
 # Running Tests
 
-- Run `npm test` to run test
+- Run `npm test` to run tests

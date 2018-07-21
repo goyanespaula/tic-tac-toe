@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
-import Game from "../Game";
+import Game from "../components/Game";
 
 describe("<Game /> initial state", () => {
   let wrapper;

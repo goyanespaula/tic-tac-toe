@@ -1,4 +1,5 @@
 .square {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,4 +7,10 @@
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5%;
   font-size: 100px;
+}
+
+@media (max-width: 550px) {
+  .square {
+    font-size: 70px;
+  }
 }
